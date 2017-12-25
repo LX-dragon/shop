@@ -24,4 +24,12 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "management/sys/user/showUser";
 	}
+
+	@RequestMapping("/showUser1")
+	public String showUser1(HttpServletRequest request,Model model) {
+		String userId = request.getParameter("id");
+		User user = userService.getUserById(userId);
+		model.addAttribute("user", user);
+		return "management/sys/user/showUser";
+	}
 }
